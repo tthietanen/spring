@@ -130,5 +130,35 @@ public class HenkiloDAO {
 		}
 
 	}
+	
+	public void poista(Henkilo h) throws DAOPoikkeus{
+		
+		//avataan yhteys
+		Connection yhteys = avaaYhteys();
+		
+		try {
+			
+			//suoritetaan haku
+			
+			//alustetaan sql-lause
+			String sql = "delete from henkilo where id = ?";
+			PreparedStatement lause = yhteys.prepareStatement(sql);
+			
+			//täytetään puuttuvat tiedot
+			lause.setInt(1, h.getId());
+			
+			//suoritetaan lause
+			lause.executeUpdate();
+			System.out.println("POISTETTIIN HENKILÖ TIETOKANNASTA: "+h);
+		} catch(Exception e) {
+			//JOTAIN VIRHETTÄ TAPAHTUI
+			throw new DAOPoikkeus("Henkilön poistamisyritys aiheutti virheen", e);
+		}finally {
+			//LOPULTA AINA SULJETAAN YHTEYS
+			suljeYhteys(yhteys);
+		}
+
+	}
+
 
 }

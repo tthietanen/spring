@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 //itse tehty validaattoriannotaatio
 
+import fi.agileo.spring.e15.bean.validation.AlkaaIsollakirjaimella;
 import fi.agileo.spring.e15.bean.validation.Paakaupunkiseutu;
 
 public class Henkilo {
@@ -15,6 +16,7 @@ public class Henkilo {
 	private int id;
 
 	@Size(min = 1, max = 255)
+	@AlkaaIsollakirjaimella
 	private String etunimi;
 
 	@Size(min = 1, max = 255)

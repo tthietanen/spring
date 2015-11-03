@@ -12,6 +12,9 @@ import fi.agileo.spring.e17.bean.Henkilo;
 import fi.agileo.spring.e17.dao.HenkiloDAO;
 
 @Controller
+// If only REST methods use @RestController, otherwise @ResponseBody for REST
+// methods
+// @RestController
 public class HenkiloController {
 	@Inject
 	HenkiloDAO dao;
@@ -21,7 +24,7 @@ public class HenkiloController {
 		List<Henkilo> henkilot = dao.haeKaikki();
 		return henkilot;
 	}
-	
+
 	@RequestMapping("henkilot")
 	public String naytaHenkilolista() {
 		return "henk/henkilolista";

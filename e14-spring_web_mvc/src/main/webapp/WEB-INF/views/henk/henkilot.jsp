@@ -16,7 +16,6 @@
 					<td>ID</td>
 					<td>ETUNIMI</td>
 					<td>SUKUNIMI</td>
-					<td>+/-</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,26 +25,9 @@
 						<td><c:out value="${henk.id}" /></td>
 						<td><c:out value="${henk.etunimi}" /></td>
 						<td><c:out value="${henk.sukunimi}" /></td>
-						<td>
-							<form action="henkilot" method="post" >
-								<input type="hidden" name="id" value="${henk.id}"/>
-								<button type="submit" class="delete"><b>-</b></button>
-							</form>
-						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
-			<tfoot>
-				<form action="henkilot" method="post">
-				<tr>
-					<td>LISÄÄ</td>
-					<td><input type="text" name="etunimi" placeholder="etunimi..."/></td>
-					<td><input type="text" name="sukunimi" placeholder="sukunimi..."/></td>
-					<td><button type="submit"><b>+</b></button></td>
-				</tr>
-				</form>
-				
-			</tfoot>
 		</table>
 
 </body>

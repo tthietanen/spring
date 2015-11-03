@@ -9,6 +9,8 @@
 
 
 	<context:component-scan base-package="fi.agileo.spring.e14" />
+	<!-- Configures the @Controller programming model, means @Controller classes are injected to DispatcherServlet-->
+	<mvc:annotation-driven />
 
 	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/views 
 		directory -->
@@ -19,8 +21,7 @@
 	</bean>
 
 
-	<!-- Configures the @Controller programming model -->
-	<mvc:annotation-driven />
+
 
 	<!-- Forwards requests to the "/" resource to the "welcome" view -->
 	<mvc:view-controller path="/" view-name="welcome" />

@@ -67,6 +67,10 @@ button {
 	cursor: pointer;
 }
 
+button.delete {
+	background: #ff8888;	
+}
+
 input {
 	border: 2px;
 	border-color: #333333;
